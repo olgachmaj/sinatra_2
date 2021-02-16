@@ -16,7 +16,13 @@ get '/drink' do
   "tea"
 end
 
-get'/cat' do
+get'/random-cat' do
  @random_name = ["Swiss", "Pug", "Chocolate"].sample
   erb(:index)
+end
+
+get'/named-cat' do
+p params
+ @name = params[:name]
+  erb(:named_cat)
 end
